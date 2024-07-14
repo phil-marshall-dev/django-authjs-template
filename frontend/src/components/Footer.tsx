@@ -4,7 +4,6 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col text-center">
-              <p>
                 Django NextAuth Template Made by{" "}
                 <a
                   href="https://philmarshall.dev"
@@ -13,7 +12,6 @@ const Footer = () => {
                 >
                   Phil Marshall
                 </a>
-              </p>
             </div>
           </div>
         </div>

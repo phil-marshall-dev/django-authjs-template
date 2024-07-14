@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import BootstrapClient from '@/components/BootstrapClient.js';
 import { SessionProvider } from 'next-auth/react';
 import { Providers } from './providers';

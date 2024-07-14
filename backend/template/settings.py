@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from datetime import timedelta
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -147,8 +146,8 @@ REST_FRAMEWORK = {
 
 # djangorestframework-simplejwt
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=20),
+    "REFRESH_TOKEN_LIFETIME": timedelta(minutes=40),
     "ROTATE_REFRESH_TOKENS": False,
     "BLACKLIST_AFTER_ROTATION": False,
     "UPDATE_LAST_LOGIN": True,
@@ -170,37 +169,7 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # django-cors-headers
-# if DEBUG:
-# CORS_ALLOW_ALL_ORIGINS = True
-# else:
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000"
 ]
-
-
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'console': {
-#             'class': 'logging.StreamHandler',
-#         },
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': os.path.join(BASE_DIR, 'django_error.log'),
-#         },
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['console', 'file'],
-#             'level': 'ERROR',
-#             'propagate': True,
-#         },
-#         'django.request': {
-#             'handlers': ['console', 'file'],
-#             'level': 'ERROR',
-#             'propagate': False,
-#         },
-#     },
-# }

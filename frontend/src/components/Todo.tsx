@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 type TodoCardProps = {
     text: string;
-    id: number;
+    id: string;
 };
 
 const TodoCard: React.FC<TodoCardProps> = ({ text, id }) => {

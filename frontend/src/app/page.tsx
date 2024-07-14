@@ -23,7 +23,7 @@ export default async function Page(req: NextApiRequest) {
         <div>
           <div>
             {todos.map((todo) => (
-              <TodoCard key={todo.id} id = {todo.id} text={todo.text} />
+              <TodoCard key={todo.id} id={todo.id} text={todo.text} />
             ))}
           </div>
           <AddTodoForm />

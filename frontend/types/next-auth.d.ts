@@ -18,6 +18,7 @@ declare module "next-auth" {
     access: string;
     refresh: string;
     user: DjangoUser;
+    refreshAt: number;
   }
 }
 
@@ -28,5 +29,6 @@ declare module "next-auth/jwt" {
     access: string;
     refresh: string;
     user: DjangoUser;
+    refreshAt: number;
   }
 }

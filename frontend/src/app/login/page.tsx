@@ -1,40 +1,18 @@
-"use client"
 
-import LoginForm from "@/components/LoginForm";
-import RegisterForm from "@/components/RegisterForm";
-import { useState } from "react";
+import LoginAndRegisterForm from "@/components/LoginAndRegisterForm";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { redirect } from 'next/navigation';
 
+export default async function LoginPage() {
+  const serverSession = await getServerSession(authOptions);
 
-const LoginPage: React.FC = () => {
-  const [showLogin, setShowLogin] = useState(true);
-  const form = showLogin ? <LoginForm /> : <RegisterForm />;
-  const switchText = showLogin
-    ? "New to our site?"
-    : "Already have an account?";
-  const switchLinkText = showLogin ? "Register an account" : "Login";
-  const switchLinkAction = showLogin
-    ? (e) => {
-      e.preventDefault();
-      setShowLogin(false);
-      return false;
-    }
-    : (e) => {
-      e.preventDefault();
-      setShowLogin(true);
-      return false;
-    }
+  if (serverSession) {
+    redirect('/');
+  }
 
   return (
-    <div className="container">
-      {form}
-      <p className="mt-3">
-        {switchText}{" "}
-        <a href="#" onClick={switchLinkAction}>
-          {switchLinkText}
-        </a>
-      </p>
-    </div>
+    <LoginAndRegisterForm />
   );
 };
 
-export default LoginPage;

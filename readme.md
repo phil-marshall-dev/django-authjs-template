@@ -1,5 +1,6 @@
-# Django Auth.js Template
-Don't use this yet beacuse I'm still working on it and I have to migrate to the new version of next auth
+# Django NextAuth Template
+
+
 
 cd backend
 python -m venv venv
