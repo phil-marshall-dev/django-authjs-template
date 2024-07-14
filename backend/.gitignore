@@ -1,0 +1,5 @@
+.venv
+.python-version
+db.sqlite3
+django_error.log
+__pycache__/
